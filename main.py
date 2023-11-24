@@ -7,7 +7,7 @@ from loguru import logger
 
 class Checker:
     def __init__(self, wallet):
-        self.wallet = wallet
+        self.wallet = wallet.lower()
 
     async def check(self):
         for _ in range(5):
