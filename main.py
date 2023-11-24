@@ -22,7 +22,7 @@ class Checker:
                         print(f"{self.wallet} | {drop}")
                         return self.wallet, drop
                     except json.decoder.JSONDecodeError:
-                        print(f"{{self.wallet}} | Не смог распаковать JSON, либо проблема в подключении, либо дроп просто равен 0")
+                        print(f"{self.wallet} | Не смог распаковать JSON, либо проблема в подключении, либо дроп просто равен 0")
                         return self.wallet, 0
                 else:
                     print(f"Failed with status code: {result.status_code}")
