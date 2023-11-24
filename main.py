@@ -19,9 +19,10 @@ class Checker:
                 if result.status_code == 200:
                     try:
                         drop = json.loads(result.text)[0]  # Обращаемся к первому элементу
+                        print(f"{self.wallet} | {drop}")
                         return self.wallet, drop
                     except json.decoder.JSONDecodeError:
-                        print(f"Failed to decode JSON, setting drop to 0.")
+                        print(f"Не смог распаковать JSON, либо проблема в подключении, либо дроп просто равен 0")
                         return self.wallet, 0
                 else:
                     print(f"Failed with status code: {result.status_code}")
